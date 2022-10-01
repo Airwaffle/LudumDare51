@@ -1,0 +1,148 @@
+{
+  "Contexts": [
+    {
+      "Name": "Start",
+      "Description": "You wake up to a heavy bouncing sound. ",
+      "Sentences": [
+        {
+          "OriginalText": "look around",
+          "MainVerb": {
+            "Name": "look",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "around",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [
+                {
+                  "EventName": "Prefab",
+                  "ParameterName": "MoreDrums|",
+                  "CaretPosition": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                }
+              ],
+              "Text": "You looked"
+            }
+          ]
+        },
+        {
+          "OriginalText": "look at clock",
+          "MainVerb": {
+            "Name": "look",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "clock",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [
+                {
+                  "EventName": "Prefab",
+                  "ParameterName": "RenderClock|Clock1.png",
+                  "CaretPosition": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                }
+              ],
+              "Text": "Clock is 1"
+            },
+            {
+              "Conditions": [],
+              "SideEffects": [
+                {
+                  "EventName": "Prefab",
+                  "ParameterName": "RenderClock|Clock2.png",
+                  "CaretPosition": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                }
+              ],
+              "Text": "Clock is 2"
+            },
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "Clock is 3"
+            }
+          ]
+        }
+      ],
+      "EffectData": {
+        "DurationMillis": 0,
+        "Curve": "Linear",
+        "BackgroundImage": null,
+        "BackgroundColor": "",
+        "TextColor": null,
+        "ScreenSize": null,
+        "GrainIntensity": null,
+        "LensDistortionIntensity": null,
+        "LensDistortionXMulitiplier": null,
+        "LensDistortionScale": null
+      },
+      "ContextEnterSideEffects": [
+        {
+          "OnlyFirstTime": false,
+          "SideEffect": {
+            "EventName": "Prefab",
+            "ParameterName": "Drums|",
+            "CaretPosition": 0,
+            "IsDirty": false,
+            "DelayedChildEffects": []
+          }
+        }
+      ],
+      "ConditionTriggerEffects": []
+    }
+  ],
+  "Counters": [],
+  "Verbs": [],
+  "Nouns": [],
+  "SideEffectPrefabs": [
+    {
+      "Identifier": "Drums",
+      "SideEffect": {
+        "EventName": "ChangeMusicTrack",
+        "ParameterName": "QuietDrums",
+        "CaretPosition": 0,
+        "IsDirty": false,
+        "DelayedChildEffects": []
+      }
+    },
+    {
+      "Identifier": "MoreDrums",
+      "SideEffect": {
+        "EventName": "ChangeMusicTrack",
+        "ParameterName": "Drums",
+        "CaretPosition": 0,
+        "IsDirty": false,
+        "DelayedChildEffects": []
+      }
+    },
+    {
+      "Identifier": "RenderClock",
+      "SideEffect": {
+        "EventName": "RenderImage",
+        "ParameterName": "Clock1.png|||False|0,100|0,100|0,100|Linear|Linear|Linear|Linear|Linear|Linear|250|250|500|False|False|0.25|0|0|Linear|Linear",
+        "CaretPosition": 0,
+        "IsDirty": false,
+        "DelayedChildEffects": []
+      }
+    }
+  ]
+}
