@@ -20,3 +20,7 @@ open
 unzip
 exit
 leave
+hit
+wake
+fuck
+screw

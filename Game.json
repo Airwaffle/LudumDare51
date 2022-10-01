@@ -6,6 +6,7 @@
       "Sentences": [
         {
           "OriginalText": "look around",
+          "AcceptableAlternatives": null,
           "MainVerb": {
             "Name": "look",
             "Synonyms": []
@@ -28,6 +29,7 @@
         },
         {
           "OriginalText": "look at mattress",
+          "AcceptableAlternatives": null,
           "MainVerb": {
             "Name": "look",
             "Synonyms": []
@@ -50,6 +52,7 @@
         },
         {
           "OriginalText": "remember childhood",
+          "AcceptableAlternatives": null,
           "MainVerb": {
             "Name": "remember",
             "Synonyms": []
@@ -72,6 +75,7 @@
         },
         {
           "OriginalText": "remember brothers",
+          "AcceptableAlternatives": null,
           "MainVerb": {
             "Name": "remember",
             "Synonyms": []
@@ -94,6 +98,7 @@
         },
         {
           "OriginalText": "turn on light",
+          "AcceptableAlternatives": null,
           "MainVerb": {
             "Name": "turn",
             "Synonyms": []
@@ -116,6 +121,7 @@
         },
         {
           "OriginalText": "listen",
+          "AcceptableAlternatives": null,
           "MainVerb": {
             "Name": "listen",
             "Synonyms": []
@@ -138,13 +144,18 @@
         },
         {
           "OriginalText": "go upstairs",
+          "AcceptableAlternatives": null,
           "MainVerb": {
             "Name": "go",
             "Synonyms": []
           },
           "MainNoun": {
             "Name": "upstairs",
-            "Synonyms": []
+            "Synonyms": [
+              "upstair",
+              "up",
+              "stairs"
+            ]
           },
           "SecondaryNoun": {
             "Name": null,
@@ -160,6 +171,7 @@
         },
         {
           "OriginalText": "open bag",
+          "AcceptableAlternatives": null,
           "MainVerb": {
             "Name": "open",
             "Synonyms": [
@@ -192,9 +204,9 @@
                   "DelayedChildEffects": []
                 },
                 {
-                  "EventName": "IncreaseCounter",
-                  "ParameterName": "InSleepingBag|",
-                  "CaretPosition": 100,
+                  "EventName": "SetCounter",
+                  "ParameterName": "OutOfSleepingBag|1",
+                  "CaretPosition": 0,
                   "IsDirty": false,
                   "DelayedChildEffects": []
                 }
@@ -210,6 +222,11 @@
         },
         {
           "OriginalText": "stand up",
+          "AcceptableAlternatives": [
+            "get up",
+            "stand",
+            "rise"
+          ],
           "MainVerb": {
             "Name": "stand",
             "Synonyms": []
@@ -225,6 +242,17 @@
           "Responses": [
             {
               "Conditions": [],
+              "SideEffects": [],
+              "Text": "You must get out of you sleeping bag before you can stand up."
+            },
+            {
+              "Conditions": [
+                {
+                  "CounterName": "OutOfSleepingBag",
+                  "Operator": "Equal",
+                  "Value": 1
+                }
+              ],
               "SideEffects": [
                 {
                   "EventName": "SetContext",
@@ -234,12 +262,13 @@
                   "DelayedChildEffects": []
                 }
               ],
-              "Text": "You rise. Slowly. Trying to not disturb whatever is making that noice."
+              "Text": "You rise. Slowly. Trying to not disturb whatever is making that noise."
             }
           ]
         },
         {
           "OriginalText": "sleep",
+          "AcceptableAlternatives": null,
           "MainVerb": {
             "Name": "sleep",
             "Synonyms": []
@@ -256,12 +285,13 @@
             {
               "Conditions": [],
               "SideEffects": [],
-              "Text": "You feel to exited to go back to sleep. What is that sound?"
+              "Text": "No way! You feel to exited to go back to sleep... Is that sound what I think it is??"
             }
           ]
         },
         {
           "OriginalText": "hint",
+          "AcceptableAlternatives": null,
           "MainVerb": {
             "Name": null,
             "Synonyms": []
@@ -284,6 +314,7 @@
         },
         {
           "OriginalText": "look at people",
+          "AcceptableAlternatives": null,
           "MainVerb": {
             "Name": "look",
             "Synonyms": []
@@ -306,6 +337,7 @@
         },
         {
           "OriginalText": "look at the moon",
+          "AcceptableAlternatives": null,
           "MainVerb": {
             "Name": "look",
             "Synonyms": []
@@ -328,6 +360,7 @@
         },
         {
           "OriginalText": "look at window",
+          "AcceptableAlternatives": null,
           "MainVerb": {
             "Name": "look",
             "Synonyms": []
@@ -350,6 +383,7 @@
         },
         {
           "OriginalText": "look at sleeping bag",
+          "AcceptableAlternatives": null,
           "MainVerb": {
             "Name": "look",
             "Synonyms": []
@@ -379,6 +413,7 @@
         },
         {
           "OriginalText": "look at zipper",
+          "AcceptableAlternatives": null,
           "MainVerb": {
             "Name": "look",
             "Synonyms": []
@@ -396,6 +431,195 @@
               "Conditions": [],
               "SideEffects": [],
               "Text": "There is nothing special about the zipper of the sleeping bag."
+            }
+          ]
+        },
+        {
+          "OriginalText": "look at clock",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "look",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "clock",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "The clock is at the same time 02.53, but also counting down in time to the beat. What's going on here?"
+            }
+          ]
+        },
+        {
+          "OriginalText": "take clock",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "take",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "clock",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "It's much better on the wall then in your pocket."
+            }
+          ]
+        },
+        {
+          "OriginalText": "close eyes",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "close",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "eyes",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You close them temporarily. But awake again to the next beat. "
+            }
+          ]
+        },
+        {
+          "OriginalText": "take moon",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "take",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "moon",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "That would indeed be silly. Wouldn't it? What's that giant rock in your pocket, some people might ask. Ha- Ha- You would answer. Oh such a splendid joke that would have been."
+            }
+          ]
+        },
+        {
+          "OriginalText": "wake up",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "Use",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "wake",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": "up",
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You are already awake. "
+            }
+          ]
+        },
+        {
+          "OriginalText": "hit yourself",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "hit",
+            "Synonyms": [
+              "fuck",
+              "screw"
+            ]
+          },
+          "MainNoun": {
+            "Name": "yourself",
+            "Synonyms": [
+              "you"
+            ]
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "Screw you, silly player man. I'm closing this game down on you if you don't stop this."
+            },
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "Why are you like this? Why would you say this to a game? I am just a game you know. Made for Ludum Dare 51 in under 48 hours."
+            },
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "I warn you. One more and I WILL close this game down. "
+            },
+            {
+              "Conditions": [],
+              "SideEffects": [
+                {
+                  "EventName": "CloseGame",
+                  "ParameterName": "",
+                  "CaretPosition": 40,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                }
+              ],
+              "Text": "Alright. That is it. Face the consequences. "
+            }
+          ]
+        },
+        {
+          "OriginalText": "help",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "help",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You want help? How about trying to stand up?"
             }
           ]
         }
@@ -505,15 +729,231 @@
     },
     {
       "Name": "Standing",
-      "Description": "Standing up, it feels like your head is suddenly more clear. You came to this house with your two brothers. They are currently laying on the floor a bit away from you. You came here together to see ghosts. As this was advertised as a haunted house.",
-      "Sentences": [],
+      "Description": "Standing up, it feels like your head is suddenly more clear. You came to this house with your two brothers. They are currently laying on the floor a bit away from you. This house your in was advertised as a haunted house. However. You've yet to see anything. Until now. Did that bouncing sound just increase?",
+      "Sentences": [
+        {
+          "OriginalText": "sleep",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "sleep",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You didn't just do all that standing up, just to go back to sleep!"
+            }
+          ]
+        },
+        {
+          "OriginalText": "hit face",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "hit",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "face",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You are already awake."
+            }
+          ]
+        },
+        {
+          "OriginalText": "go to window",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "go",
+            "Synonyms": [
+              "look"
+            ]
+          },
+          "MainNoun": {
+            "Name": "window",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [
+                {
+                  "EventName": "Prefab",
+                  "ParameterName": "ShowStayImage|StarrySky.png",
+                  "CaretPosition": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                }
+              ],
+              "Text": "You go closer to the window and look out to the starlit sky. The stars are truely beautiful tonight. You also see a midsummer pole outside in the yard."
+            }
+          ]
+        },
+        {
+          "OriginalText": "look at people",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "look",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "people",
+            "Synonyms": [
+              "brothers",
+              "bodies",
+              "sleeping bags"
+            ]
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [
+                {
+                  "EventName": "Prefab",
+                  "ParameterName": "ShowStayImage|brothers.png",
+                  "CaretPosition": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                },
+                {
+                  "EventName": "Prefab",
+                  "ParameterName": "SnoreSound|",
+                  "CaretPosition": 30,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                },
+                {
+                  "EventName": "Prefab",
+                  "ParameterName": "SleepZZZ|",
+                  "CaretPosition": 30,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                }
+              ],
+              "Text": "You walk closer toward your brothers. As you hear them snooring, you draw a sigh of relief. They are only sleeping."
+            }
+          ]
+        },
+        {
+          "OriginalText": "look at stars",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "look",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "stars",
+            "Synonyms": [
+              "starlit sky",
+              "sky"
+            ]
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You think you could stand here and admire the stars the entire night. If not for the strange sound coming from upstairs."
+            }
+          ]
+        },
+        {
+          "OriginalText": "walk upstairs",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "walk",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "upstairs",
+            "Synonyms": [
+              "upstair",
+              "up",
+              "stairs"
+            ]
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [
+                {
+                  "EventName": "SetContext",
+                  "ParameterName": "Upstairs",
+                  "CaretPosition": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                }
+              ],
+              "Text": "You open the door. As quietly as possible and then start sneaking. Slowly. Step by step. Upstairs."
+            }
+          ]
+        },
+        {
+          "OriginalText": "look at pole",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "look",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "pole",
+            "Synonyms": [
+              "midsummer pole",
+              "midsummer"
+            ]
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "It was quite a bit of time ago since it was midsummer. The pole outside is old and hangs to one side. You bet the owners left it there to give the house and its surrounding a more haunted feeling."
+            }
+          ]
+        }
+      ],
       "EffectData": {
         "DurationMillis": 1600,
         "Curve": "Linear",
         "BackgroundImage": null,
         "BackgroundColor": "#250043FF",
         "TextColor": null,
-        "ScreenSize": 840.0,
+        "ScreenSize": 760.0,
         "GrainIntensity": 0.1,
         "LensDistortionIntensity": null,
         "LensDistortionXMulitiplier": null,
@@ -525,6 +965,16 @@
           "SideEffect": {
             "EventName": "Prefab",
             "ParameterName": "MoreDrums|",
+            "CaretPosition": 0,
+            "IsDirty": false,
+            "DelayedChildEffects": []
+          }
+        },
+        {
+          "OnlyFirstTime": false,
+          "SideEffect": {
+            "EventName": "Prefab",
+            "ParameterName": "ShowStayImage|StandingUp.png",
             "CaretPosition": 0,
             "IsDirty": false,
             "DelayedChildEffects": []
@@ -564,7 +1014,14 @@
             },
             {
               "EventName": "Prefab",
-              "ParameterName": "HelloSound|",
+              "ParameterName": "LoudBounce|",
+              "CaretPosition": 0,
+              "IsDirty": false,
+              "DelayedChildEffects": []
+            },
+            {
+              "EventName": "Prefab",
+              "ParameterName": "BounceShakeStronger|",
               "CaretPosition": 0,
               "IsDirty": false,
               "DelayedChildEffects": []
@@ -572,6 +1029,14 @@
           ]
         }
       ]
+    },
+    {
+      "Name": "Upstairs",
+      "Description": "TODO: Write intro description for new context: [Upstairs].",
+      "Sentences": [],
+      "EffectData": null,
+      "ContextEnterSideEffects": [],
+      "ConditionTriggerEffects": []
     }
   ],
   "Counters": [],
@@ -632,7 +1097,7 @@
       "Identifier": "RenderClockSmall",
       "SideEffect": {
         "EventName": "RenderImage",
-        "ParameterName": "Clock1.png|||False|350,160|350,160|350,160|Linear|Linear|Linear|Linear|Linear|Linear|200|200|700|False|False|0.15|0|0|Linear|Linear",
+        "ParameterName": "Clock1.png|||False|320,160|320,160|320,160|Linear|Linear|Linear|Linear|Linear|Linear|200|200|700|False|False|0.15|0|0|Linear|Linear",
         "CaretPosition": 0,
         "IsDirty": false,
         "DelayedChildEffects": []
@@ -656,6 +1121,68 @@
         "CaretPosition": 0,
         "IsDirty": false,
         "DelayedChildEffects": []
+      }
+    },
+    {
+      "Identifier": "BounceShakeStronger",
+      "SideEffect": {
+        "EventName": "ShakeScreen",
+        "ParameterName": "650|15|Linear",
+        "CaretPosition": 0,
+        "IsDirty": false,
+        "DelayedChildEffects": []
+      }
+    },
+    {
+      "Identifier": "ShowStayImage",
+      "SideEffect": {
+        "EventName": "RenderImage",
+        "ParameterName": "StandingUp.png||Top|True|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|500|500|1000|True|False|0.35|0.2|0.2|Linear|Linear",
+        "CaretPosition": 0,
+        "IsDirty": false,
+        "DelayedChildEffects": []
+      }
+    },
+    {
+      "Identifier": "SnoreSound",
+      "SideEffect": {
+        "EventName": "PlaySound",
+        "ParameterName": "snore.wav",
+        "CaretPosition": 0,
+        "IsDirty": false,
+        "DelayedChildEffects": []
+      }
+    },
+    {
+      "Identifier": "SleepZZZ",
+      "SideEffect": {
+        "EventName": "RenderImage",
+        "ParameterName": "z1.png|||False|-130,230|-130,130|-130,500|Linear|Linear|Linear|Linear|Linear|Linear|800|800|500|False|False|0.5|0.4|0.4|Linear|Linear",
+        "CaretPosition": 0,
+        "IsDirty": false,
+        "DelayedChildEffects": [
+          {
+            "DelayMillis": 1500,
+            "SideEffect": {
+              "EventName": "RenderImage",
+              "ParameterName": "z2.png|||False|0,230|0,130|0,500|Linear|Linear|Linear|Linear|Linear|Linear|800|800|500|False|False|0.5|0.4|0.4|Linear|Linear",
+              "CaretPosition": 0,
+              "IsDirty": false,
+              "DelayedChildEffects": [
+                {
+                  "DelayMillis": 2000,
+                  "SideEffect": {
+                    "EventName": "RenderImage",
+                    "ParameterName": "z3.png|||False|130,230|130,130|130,500|Linear|Linear|Linear|Linear|Linear|Linear|800|800|500|False|False|0.5|0.4|0.4|Linear|Linear",
+                    "CaretPosition": 0,
+                    "IsDirty": false,
+                    "DelayedChildEffects": []
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ]
