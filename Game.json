@@ -163,7 +163,11 @@
           "MainVerb": {
             "Name": "open",
             "Synonyms": [
-              "unzip"
+              "unzip",
+              "exit",
+              "remove",
+              "leave",
+              "flee"
             ]
           },
           "MainNoun": {
@@ -186,9 +190,212 @@
                   "CaretPosition": 100,
                   "IsDirty": false,
                   "DelayedChildEffects": []
+                },
+                {
+                  "EventName": "IncreaseCounter",
+                  "ParameterName": "InSleepingBag|",
+                  "CaretPosition": 100,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
                 }
               ],
               "Text": "You move your hands above your head in an acrobatic movement and move them outside of the sleeping bag and unzips the zipper."
+            },
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You have already left the sleeping bag."
+            }
+          ]
+        },
+        {
+          "OriginalText": "stand up",
+          "MainVerb": {
+            "Name": "stand",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "up",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [
+                {
+                  "EventName": "SetContext",
+                  "ParameterName": "Standing",
+                  "CaretPosition": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                }
+              ],
+              "Text": "You rise. Slowly. Trying to not disturb whatever is making that noice."
+            }
+          ]
+        },
+        {
+          "OriginalText": "sleep",
+          "MainVerb": {
+            "Name": "sleep",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You feel to exited to go back to sleep. What is that sound?"
+            }
+          ]
+        },
+        {
+          "OriginalText": "hint",
+          "MainVerb": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "hint",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You will never get any hints from me."
+            }
+          ]
+        },
+        {
+          "OriginalText": "look at people",
+          "MainVerb": {
+            "Name": "look",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "people",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "Two figures in sleeping bags, highlighted by the moon outside the window. You know them, but your newly awake mind is still a bit lost exactly who they are."
+            }
+          ]
+        },
+        {
+          "OriginalText": "look at the moon",
+          "MainVerb": {
+            "Name": "look",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "moon",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "The moon is full. Such a beautiful and majestic rock in the sky. "
+            }
+          ]
+        },
+        {
+          "OriginalText": "look at window",
+          "MainVerb": {
+            "Name": "look",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "window",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "The window is slightly open to let some cold air in. Its a warm summer night. You feel sweaty inside your sleeping bag. "
+            }
+          ]
+        },
+        {
+          "OriginalText": "look at sleeping bag",
+          "MainVerb": {
+            "Name": "look",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "bag",
+            "Synonyms": [
+              "sleeping bag"
+            ]
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You are inside the sleeping bag. Its just a normal sleeing bag."
+            },
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "The sleeping bag is in a pile next to you. Good riddance. It was too hot in there."
+            }
+          ]
+        },
+        {
+          "OriginalText": "look at zipper",
+          "MainVerb": {
+            "Name": "look",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "zipper",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "There is nothing special about the zipper of the sleeping bag."
             }
           ]
         }
@@ -200,7 +407,7 @@
         "BackgroundColor": "",
         "TextColor": null,
         "ScreenSize": null,
-        "GrainIntensity": null,
+        "GrainIntensity": 0.7,
         "LensDistortionIntensity": null,
         "LensDistortionXMulitiplier": null,
         "LensDistortionScale": null
@@ -221,6 +428,16 @@
           "SideEffect": {
             "EventName": "Prefab",
             "ParameterName": "LoudBounce|",
+            "CaretPosition": 0,
+            "IsDirty": false,
+            "DelayedChildEffects": []
+          }
+        },
+        {
+          "OnlyFirstTime": false,
+          "SideEffect": {
+            "EventName": "Prefab",
+            "ParameterName": "BounceShake|",
             "CaretPosition": 0,
             "IsDirty": false,
             "DelayedChildEffects": []
@@ -274,6 +491,83 @@
               "CaretPosition": 0,
               "IsDirty": false,
               "DelayedChildEffects": []
+            },
+            {
+              "EventName": "Prefab",
+              "ParameterName": "BounceShake|",
+              "CaretPosition": 0,
+              "IsDirty": false,
+              "DelayedChildEffects": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Standing",
+      "Description": "Standing up, it feels like your head is suddenly more clear. You came to this house with your two brothers. They are currently laying on the floor a bit away from you. You came here together to see ghosts. As this was advertised as a haunted house.",
+      "Sentences": [],
+      "EffectData": {
+        "DurationMillis": 1600,
+        "Curve": "Linear",
+        "BackgroundImage": null,
+        "BackgroundColor": "#250043FF",
+        "TextColor": null,
+        "ScreenSize": 840.0,
+        "GrainIntensity": 0.1,
+        "LensDistortionIntensity": null,
+        "LensDistortionXMulitiplier": null,
+        "LensDistortionScale": null
+      },
+      "ContextEnterSideEffects": [
+        {
+          "OnlyFirstTime": false,
+          "SideEffect": {
+            "EventName": "Prefab",
+            "ParameterName": "MoreDrums|",
+            "CaretPosition": 0,
+            "IsDirty": false,
+            "DelayedChildEffects": []
+          }
+        }
+      ],
+      "ConditionTriggerEffects": [
+        {
+          "Condition": {
+            "CounterName": "ClockTime",
+            "Operator": "LessThan",
+            "Value": 10
+          },
+          "SideEffects": [
+            {
+              "EventName": "Prefab",
+              "ParameterName": "RenderClockSmall|Clock[ClockTime].png",
+              "CaretPosition": 0,
+              "IsDirty": false,
+              "DelayedChildEffects": []
+            }
+          ]
+        },
+        {
+          "Condition": {
+            "CounterName": "ClockTime",
+            "Operator": "Equal",
+            "Value": 10
+          },
+          "SideEffects": [
+            {
+              "EventName": "SetCounter",
+              "ParameterName": "ClockTime|1",
+              "CaretPosition": 0,
+              "IsDirty": false,
+              "DelayedChildEffects": []
+            },
+            {
+              "EventName": "Prefab",
+              "ParameterName": "HelloSound|",
+              "CaretPosition": 0,
+              "IsDirty": false,
+              "DelayedChildEffects": []
             }
           ]
         }
@@ -298,7 +592,7 @@
       "Identifier": "MoreDrums",
       "SideEffect": {
         "EventName": "ChangeMusicTrack",
-        "ParameterName": "Drums",
+        "ParameterName": "MoreDrums",
         "CaretPosition": 0,
         "IsDirty": false,
         "DelayedChildEffects": []
@@ -329,6 +623,36 @@
       "SideEffect": {
         "EventName": "PlaySound",
         "ParameterName": "Unzip.wav",
+        "CaretPosition": 0,
+        "IsDirty": false,
+        "DelayedChildEffects": []
+      }
+    },
+    {
+      "Identifier": "RenderClockSmall",
+      "SideEffect": {
+        "EventName": "RenderImage",
+        "ParameterName": "Clock1.png|||False|350,160|350,160|350,160|Linear|Linear|Linear|Linear|Linear|Linear|200|200|700|False|False|0.15|0|0|Linear|Linear",
+        "CaretPosition": 0,
+        "IsDirty": false,
+        "DelayedChildEffects": []
+      }
+    },
+    {
+      "Identifier": "HelloSound",
+      "SideEffect": {
+        "EventName": "PlaySound",
+        "ParameterName": "Hello.wav",
+        "CaretPosition": 0,
+        "IsDirty": false,
+        "DelayedChildEffects": []
+      }
+    },
+    {
+      "Identifier": "BounceShake",
+      "SideEffect": {
+        "EventName": "ShakeScreen",
+        "ParameterName": "500|10|EaseInOutSine",
         "CaretPosition": 0,
         "IsDirty": false,
         "DelayedChildEffects": []
