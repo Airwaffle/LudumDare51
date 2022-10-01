@@ -16,3 +16,5 @@ scream
 talk
 examine
 jump
+open
+unzip

@@ -2,7 +2,7 @@
   "Contexts": [
     {
       "Name": "Start",
-      "Description": "You wake up to a heavy bouncing sound. ",
+      "Description": "You wake up to a heavy bouncing sound. You feel very disorganized. Your body is laying on the floor with a very thin mattress under it and you don't quite remember how you got here.",
       "Sentences": [
         {
           "OriginalText": "look around",
@@ -21,28 +21,156 @@
           "Responses": [
             {
               "Conditions": [],
-              "SideEffects": [
-                {
-                  "EventName": "Prefab",
-                  "ParameterName": "MoreDrums|",
-                  "CaretPosition": 0,
-                  "IsDirty": false,
-                  "DelayedChildEffects": []
-                }
-              ],
-              "Text": "You looked"
+              "SideEffects": [],
+              "Text": "You're in a sleeping bag on the floor. It's quite dark. You get some light through a window and you can see it shining at a clock which tells the time 02.53. There are two other people in sleeping bags a bit away from you. They are very still. Probably sleeping."
             }
           ]
         },
         {
-          "OriginalText": "look at clock",
+          "OriginalText": "look at mattress",
           "MainVerb": {
             "Name": "look",
             "Synonyms": []
           },
           "MainNoun": {
-            "Name": "clock",
+            "Name": "mattress",
             "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "The mattress is very thin. The sort you would use on a hiking trip as a kid. It brings you back to your childhood. "
+            }
+          ]
+        },
+        {
+          "OriginalText": "remember childhood",
+          "MainVerb": {
+            "Name": "remember",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "childhood",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You remember spending a lot of time with your two brothers when you were a kid. You usually did a lot of pranks on your parents. "
+            }
+          ]
+        },
+        {
+          "OriginalText": "remember brothers",
+          "MainVerb": {
+            "Name": "remember",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "brothers",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You have two brothers. Both older than you. You're all old enough to have moved out from home, and live quite far from eachother, but you make sure to sometimes spend some time together."
+            }
+          ]
+        },
+        {
+          "OriginalText": "turn on light",
+          "MainVerb": {
+            "Name": "turn",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "light",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You see no way of doing that in your current position, you are still on the floor in your sleeping bag. "
+            }
+          ]
+        },
+        {
+          "OriginalText": "listen",
+          "MainVerb": {
+            "Name": "listen",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "There seems to be a bouncing sound coming from upstairs. It repeats every 10th second."
+            }
+          ]
+        },
+        {
+          "OriginalText": "go upstairs",
+          "MainVerb": {
+            "Name": "go",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "upstairs",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You're in a sleeping bag on the floor. You must first get out of it and stand up."
+            }
+          ]
+        },
+        {
+          "OriginalText": "open bag",
+          "MainVerb": {
+            "Name": "open",
+            "Synonyms": [
+              "unzip"
+            ]
+          },
+          "MainNoun": {
+            "Name": "bag",
+            "Synonyms": [
+              "sleeping bag"
+            ]
           },
           "SecondaryNoun": {
             "Name": null,
@@ -54,31 +182,13 @@
               "SideEffects": [
                 {
                   "EventName": "Prefab",
-                  "ParameterName": "RenderClock|Clock1.png",
-                  "CaretPosition": 0,
+                  "ParameterName": "UnzipSound|",
+                  "CaretPosition": 100,
                   "IsDirty": false,
                   "DelayedChildEffects": []
                 }
               ],
-              "Text": "Clock is 1"
-            },
-            {
-              "Conditions": [],
-              "SideEffects": [
-                {
-                  "EventName": "Prefab",
-                  "ParameterName": "RenderClock|Clock2.png",
-                  "CaretPosition": 0,
-                  "IsDirty": false,
-                  "DelayedChildEffects": []
-                }
-              ],
-              "Text": "Clock is 2"
-            },
-            {
-              "Conditions": [],
-              "SideEffects": [],
-              "Text": "Clock is 3"
+              "Text": "You move your hands above your head in an acrobatic movement and move them outside of the sleeping bag and unzips the zipper."
             }
           ]
         }
@@ -105,9 +215,69 @@
             "IsDirty": false,
             "DelayedChildEffects": []
           }
+        },
+        {
+          "OnlyFirstTime": false,
+          "SideEffect": {
+            "EventName": "Prefab",
+            "ParameterName": "LoudBounce|",
+            "CaretPosition": 0,
+            "IsDirty": false,
+            "DelayedChildEffects": []
+          }
+        },
+        {
+          "OnlyFirstTime": false,
+          "SideEffect": {
+            "EventName": "LoopCounter",
+            "ParameterName": "ClockTime|1|1000|2147483647",
+            "CaretPosition": 0,
+            "IsDirty": false,
+            "DelayedChildEffects": []
+          }
         }
       ],
-      "ConditionTriggerEffects": []
+      "ConditionTriggerEffects": [
+        {
+          "Condition": {
+            "CounterName": "ClockTime",
+            "Operator": "LessThan",
+            "Value": 10
+          },
+          "SideEffects": [
+            {
+              "EventName": "Prefab",
+              "ParameterName": "RenderClock|Clock[ClockTime].png",
+              "CaretPosition": 0,
+              "IsDirty": false,
+              "DelayedChildEffects": []
+            }
+          ]
+        },
+        {
+          "Condition": {
+            "CounterName": "ClockTime",
+            "Operator": "Equal",
+            "Value": 10
+          },
+          "SideEffects": [
+            {
+              "EventName": "SetCounter",
+              "ParameterName": "ClockTime|1",
+              "CaretPosition": 0,
+              "IsDirty": false,
+              "DelayedChildEffects": []
+            },
+            {
+              "EventName": "Prefab",
+              "ParameterName": "LoudBounce|",
+              "CaretPosition": 0,
+              "IsDirty": false,
+              "DelayedChildEffects": []
+            }
+          ]
+        }
+      ]
     }
   ],
   "Counters": [],
@@ -138,7 +308,27 @@
       "Identifier": "RenderClock",
       "SideEffect": {
         "EventName": "RenderImage",
-        "ParameterName": "Clock1.png|||False|0,100|0,100|0,100|Linear|Linear|Linear|Linear|Linear|Linear|250|250|500|False|False|0.25|0|0|Linear|Linear",
+        "ParameterName": "Clock1.png|||False|0,100|0,100|0,100|Linear|Linear|Linear|Linear|Linear|Linear|250|250|750|False|False|0.25|0|0|Linear|Linear",
+        "CaretPosition": 0,
+        "IsDirty": false,
+        "DelayedChildEffects": []
+      }
+    },
+    {
+      "Identifier": "LoudBounce",
+      "SideEffect": {
+        "EventName": "PlaySound",
+        "ParameterName": "LoudBounce.wav",
+        "CaretPosition": 0,
+        "IsDirty": false,
+        "DelayedChildEffects": []
+      }
+    },
+    {
+      "Identifier": "UnzipSound",
+      "SideEffect": {
+        "EventName": "PlaySound",
+        "ParameterName": "Unzip.wav",
         "CaretPosition": 0,
         "IsDirty": false,
         "DelayedChildEffects": []
