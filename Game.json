@@ -2483,6 +2483,14 @@
         "tell",
         "inform"
       ]
+    },
+    {
+      "MainWord": "hit",
+      "Synonyms": [
+        "kick",
+        "punch",
+        "hurt"
+      ]
     }
   ]
 }
