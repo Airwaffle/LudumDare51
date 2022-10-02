@@ -762,6 +762,97 @@
               "Text": "You sit up next to your sleeping bag."
             }
           ]
+        },
+        {
+          "OriginalText": "take sleeping bag",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "take",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "bag",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You are already inside of the sleeping bag."
+            },
+            {
+              "Conditions": [
+                {
+                  "CounterName": "OutOfSleepingBag",
+                  "Operator": "Equal",
+                  "Value": 1
+                }
+              ],
+              "SideEffects": [],
+              "Text": "You see no reason for carrying the sleeping bag around with you."
+            }
+          ]
+        },
+        {
+          "OriginalText": "wear sleeping bag",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "wear",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "bag",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You are already wearing the sleeping bag."
+            },
+            {
+              "Conditions": [
+                {
+                  "CounterName": "OutOfSleepingBag",
+                  "Operator": "Equal",
+                  "Value": 1
+                }
+              ],
+              "SideEffects": [],
+              "Text": "You don't want to go back to bed. You want to go and investigate where that sound is coming from."
+            }
+          ]
+        },
+        {
+          "OriginalText": "listen to the sound",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "listen",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "sound",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "It's a hard sound to describe. You should try to find its source."
+            }
+          ]
         }
       ],
       "EffectData": {
@@ -880,7 +971,7 @@
     },
     {
       "Name": "Standing",
-      "Description": "Standing up, it feels like your head is suddenly more clear. You came to this house with your two brothers. They are currently laying on the floor a bit away from you. This house your in was advertised as a haunted house. However. You've yet to see anything. Until now. Did that bouncing sound just increase?",
+      "Description": "Standing up. Your head is suddenly more clear. You came to this house with your two brothers. They are currently laying on the floor a bit away from you. You are in a haunted house. Did that bouncing sound just increase? It's coming from upstairs. You see a door leading upstairs.",
       "Sentences": [
         {
           "OriginalText": "sleep",
@@ -1227,7 +1318,9 @@
           "AcceptableAlternatives": null,
           "MainVerb": {
             "Name": "look",
-            "Synonyms": []
+            "Synonyms": [
+              "go"
+            ]
           },
           "MainNoun": {
             "Name": "door",
@@ -1240,7 +1333,16 @@
           "Responses": [
             {
               "Conditions": [],
-              "SideEffects": [],
+              "SideEffects": [
+                {
+                  "EventName": "Prefab",
+                  "ParameterName": "ShowStayImage|DoorDown[DoorOpen].png",
+                  "CaretPosition": 0,
+                  "DelayMillis": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                }
+              ],
               "Text": "This is very strange. You remember coming here through an outside door. But now, there is only a door leading upstairs."
             }
           ]
@@ -1263,8 +1365,65 @@
           "Responses": [
             {
               "Conditions": [],
-              "SideEffects": [],
+              "SideEffects": [
+                {
+                  "EventName": "IncreaseCounter",
+                  "ParameterName": "DoorOpen",
+                  "CaretPosition": 0,
+                  "DelayMillis": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                },
+                {
+                  "EventName": "Prefab",
+                  "ParameterName": "ShowStayImage|DoorDown[DoorOpen].png",
+                  "CaretPosition": 0,
+                  "DelayMillis": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                }
+              ],
               "Text": "You open the door leading upstairs. The sound continues."
+            }
+          ]
+        },
+        {
+          "OriginalText": "close door",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "close",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "door",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [
+                {
+                  "EventName": "DecreaseCounter",
+                  "ParameterName": "DoorOpen",
+                  "CaretPosition": 0,
+                  "DelayMillis": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                },
+                {
+                  "EventName": "Prefab",
+                  "ParameterName": "ShowStayImage|DoorDown[DoorOpen].png",
+                  "CaretPosition": 0,
+                  "DelayMillis": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                }
+              ],
+              "Text": "The door has been closed."
             }
           ]
         },
@@ -1565,6 +1724,153 @@
               "Text": "There is nothing special about the floor. It's old and creaky. As it usually is in these kinds of houses."
             }
           ]
+        },
+        {
+          "OriginalText": "listen",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "listen",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "The bouncing sound still repeats at an interval of 10 seconds. However, it seems louder now. And you can almost hear another sound hidden underneath the bounces."
+            }
+          ]
+        },
+        {
+          "OriginalText": "listen to the sound",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "listen",
+            "Synonyms": [
+              "go",
+              "navigate",
+              "find",
+              "search",
+              "follow"
+            ]
+          },
+          "MainNoun": {
+            "Name": "sound",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "The sound is coming from upstairs. You see the door leading upstairs, staring at you menacingly."
+            }
+          ]
+        },
+        {
+          "OriginalText": "enter door",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "enter",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "door",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "The door leading upstairs is closed."
+            },
+            {
+              "Conditions": [
+                {
+                  "CounterName": "DoorOpen",
+                  "Operator": "Equal",
+                  "Value": 1
+                }
+              ],
+              "SideEffects": [
+                {
+                  "EventName": "SetContext",
+                  "ParameterName": "Upstairs",
+                  "CaretPosition": 0,
+                  "DelayMillis": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": [
+                    {
+                      "DelayMillis": 500,
+                      "SideEffect": {
+                        "EventName": "QueueText",
+                        "ParameterName": "Is this the port to heaven... Or hell?",
+                        "CaretPosition": 0,
+                        "DelayMillis": 0,
+                        "IsDirty": false,
+                        "DelayedChildEffects": []
+                      }
+                    }
+                  ]
+                },
+                {
+                  "EventName": "Prefab",
+                  "ParameterName": "StairFoot",
+                  "CaretPosition": 0,
+                  "DelayMillis": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                },
+                {
+                  "EventName": "Pause",
+                  "ParameterName": "500",
+                  "CaretPosition": 18,
+                  "DelayMillis": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                },
+                {
+                  "EventName": "Pause",
+                  "ParameterName": "500",
+                  "CaretPosition": 66,
+                  "DelayMillis": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                },
+                {
+                  "EventName": "Pause",
+                  "ParameterName": "500",
+                  "CaretPosition": 74,
+                  "DelayMillis": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                },
+                {
+                  "EventName": "Pause",
+                  "ParameterName": "500",
+                  "CaretPosition": 88,
+                  "DelayMillis": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                }
+              ],
+              "Text": "You walk through the door that leads upstairs. You walk as quietly as possible. Sneaking slowly. Step by step. Upstairs."
+            }
+          ]
         }
       ],
       "EffectData": {
@@ -1807,7 +2113,12 @@
       ]
     }
   ],
-  "Counters": [],
+  "Counters": [
+    {
+      "Name": "DoorOpen",
+      "DefaultValue": 0
+    }
+  ],
   "Verbs": [],
   "Nouns": [],
   "SideEffectPrefabs": [
