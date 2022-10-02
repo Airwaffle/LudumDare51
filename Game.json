@@ -328,7 +328,10 @@
           },
           "MainNoun": {
             "Name": "people",
-            "Synonyms": []
+            "Synonyms": [
+              "figures",
+              "bags"
+            ]
           },
           "SecondaryNoun": {
             "Name": null,
@@ -412,7 +415,13 @@
               "Text": "You are inside the sleeping bag. Its just a normal sleeing bag."
             },
             {
-              "Conditions": [],
+              "Conditions": [
+                {
+                  "CounterName": "OutOfSleepingBag",
+                  "Operator": "Equal",
+                  "Value": 1
+                }
+              ],
               "SideEffects": [],
               "Text": "The sleeping bag is in a pile next to you. Good riddance. It was too hot in there."
             }
@@ -584,7 +593,16 @@
             },
             {
               "Conditions": [],
-              "SideEffects": [],
+              "SideEffects": [
+                {
+                  "EventName": "QueueText",
+                  "ParameterName": "And a quite good one as well. If I say so myself (Please rate 5 of 5 for humour).",
+                  "CaretPosition": 0,
+                  "DelayMillis": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                }
+              ],
               "Text": "Why are you like this? Why would you say this to a game? I am just a game you know. Made for Ludum Dare 51 in under 48 hours."
             },
             {
@@ -628,6 +646,109 @@
               "Conditions": [],
               "SideEffects": [],
               "Text": "You want help? How about trying to stand up?"
+            }
+          ]
+        },
+        {
+          "OriginalText": "go to window",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "go",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "window",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You can't go anywhere. You must first stand up."
+            }
+          ]
+        },
+        {
+          "OriginalText": "go to brothers",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "go",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "brothers",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You must first stand up before you can go anywhere."
+            }
+          ]
+        },
+        {
+          "OriginalText": "go to the clock",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "go",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "clock",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You are laying on the floor. You should probably first stand up before trying to go anywhere."
+            }
+          ]
+        },
+        {
+          "OriginalText": "sit up",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "sit",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "up",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You sit up in your sleeping bag."
+            },
+            {
+              "Conditions": [
+                {
+                  "CounterName": "OutOfSleepingBag",
+                  "Operator": "Equal",
+                  "Value": 1
+                }
+              ],
+              "SideEffects": [],
+              "Text": "You sit up next to your sleeping bag."
             }
           ]
         }
@@ -767,7 +888,7 @@
             {
               "Conditions": [],
               "SideEffects": [],
-              "Text": "You didn't just do all that standing up, just to go back to sleep!"
+              "Text": "You didn't just stand up just to go back to sleep!"
             }
           ]
         },
@@ -1118,7 +1239,7 @@
             {
               "Conditions": [],
               "SideEffects": [],
-              "Text": "You open the door upstairs."
+              "Text": "You open the door leading upstairs. The sound continues."
             }
           ]
         },
@@ -1141,7 +1262,7 @@
             {
               "Conditions": [],
               "SideEffects": [],
-              "Text": "Closing the window would be a bad idea. It's hot as hell in here."
+              "Text": "That would be a bad idea. Closing the window would make this room hot as hell."
             }
           ]
         },
@@ -1302,6 +1423,121 @@
                 }
               ],
               "Text": "You stand next to your sleeping bag."
+            }
+          ]
+        },
+        {
+          "OriginalText": "wear bag",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "wear",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "bag",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You don't want to go back to sleep. You want to go and check out where that sound is coming from."
+            }
+          ]
+        },
+        {
+          "OriginalText": "take brothers",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "take",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "brothers",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "Both of them are heavier then what your thin arms can carry."
+            }
+          ]
+        },
+        {
+          "OriginalText": "take clock",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "take",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "clock",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "There is no reason to steal the clock. It's just a bit crazy."
+            }
+          ]
+        },
+        {
+          "OriginalText": "look at clock",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "look",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "clock",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "The clock is almost 03 in the night. You just want to go and see what is happening upstairs. After that you should really get back to bed."
+            }
+          ]
+        },
+        {
+          "OriginalText": "look at the floor",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "look",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "floor",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "There is nothing special about the floor. It's old and creaky. As it usually is in these kinds of houses."
             }
           ]
         }
@@ -1728,6 +1964,7 @@
     {
       "MainWord": "go",
       "Synonyms": [
+        "move",
         "walk",
         "travel",
         "sneak"
@@ -1744,6 +1981,7 @@
       "MainWord": "brothers",
       "Synonyms": [
         "people",
+        "brother",
         "bodies",
         "figures",
         "sleeping bags"
