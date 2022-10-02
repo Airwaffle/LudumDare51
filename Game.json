@@ -166,6 +166,17 @@
               "Conditions": [],
               "SideEffects": [],
               "Text": "You're in a sleeping bag on the floor. You must first get out of it and stand up."
+            },
+            {
+              "Conditions": [
+                {
+                  "CounterName": "OutOfSleepingBag",
+                  "Operator": "Equal",
+                  "Value": 1
+                }
+              ],
+              "SideEffects": [],
+              "Text": "You are laying on the floor. You must first stand up before you can go anywhere."
             }
           ]
         },
@@ -292,7 +303,7 @@
             {
               "Conditions": [],
               "SideEffects": [],
-              "Text": "No way! You feel to exited to go back to sleep... Is that sound what I think it is??"
+              "Text": "No way! You feel way to exited to go back to sleep. Is that sound what I think it is?"
             }
           ]
         },
@@ -412,7 +423,7 @@
             {
               "Conditions": [],
               "SideEffects": [],
-              "Text": "You are inside the sleeping bag. Its just a normal sleeing bag."
+              "Text": "You are inside the sleeping bag. Its just a normal sleeping bag."
             },
             {
               "Conditions": [
@@ -863,7 +874,9 @@
           ]
         }
       ],
-      "GlobalSynonyms": []
+      "GlobalSynonyms": [],
+      "DefaultResponses": null,
+      "EachTimeSideEffects": []
     },
     {
       "Name": "Standing",
@@ -1054,7 +1067,19 @@
                   "CaretPosition": 0,
                   "DelayMillis": 0,
                   "IsDirty": false,
-                  "DelayedChildEffects": []
+                  "DelayedChildEffects": [
+                    {
+                      "DelayMillis": 500,
+                      "SideEffect": {
+                        "EventName": "QueueText",
+                        "ParameterName": "Is this the port to heaven... Or hell?",
+                        "CaretPosition": 0,
+                        "DelayMillis": 0,
+                        "IsDirty": false,
+                        "DelayedChildEffects": []
+                      }
+                    }
+                  ]
                 },
                 {
                   "EventName": "Prefab",
@@ -1097,7 +1122,7 @@
                   "DelayedChildEffects": []
                 }
               ],
-              "Text": "You open the door. As quietly as possible and then start sneaking. Slowly. Step by step. Upstairs."
+              "Text": "You walk through the door that leads upstairs. You walk as quietly as possible. Sneaking slowly. Step by step. Upstairs."
             }
           ]
         },
@@ -1147,7 +1172,7 @@
             {
               "Conditions": [],
               "SideEffects": [],
-              "Text": "Your brothers are laying on the floor next to a slightly open window. The pale moon light shines in on their still faces. The loud bouncing sound continues."
+              "Text": "Your brothers are laying on the floor next to a slightly open window. The pale moon light shines in on their still faces. The loud bouncing sound continues. There is a door leading upstairs."
             }
           ]
         },
@@ -1630,21 +1655,23 @@
           ]
         }
       ],
-      "GlobalSynonyms": []
+      "GlobalSynonyms": [],
+      "DefaultResponses": null,
+      "EachTimeSideEffects": []
     },
     {
       "Name": "Upstairs",
       "Description": "The door opens by itself. You stand in shock. Unable to move any part of your body. You see something resembling a figure slowly moving toward you.",
       "Sentences": [],
       "EffectData": {
-        "DurationMillis": 0,
+        "DurationMillis": 15000,
         "Curve": "Linear",
         "BackgroundImage": null,
-        "BackgroundColor": "",
+        "BackgroundColor": "#540000FF",
         "TextColor": null,
         "ScreenSize": null,
         "GrainIntensity": null,
-        "LensDistortionIntensity": null,
+        "LensDistortionIntensity": -30.0,
         "LensDistortionXMulitiplier": null,
         "LensDistortionScale": null
       },
@@ -1662,7 +1689,122 @@
         }
       ],
       "ConditionTriggerEffects": [],
-      "GlobalSynonyms": []
+      "GlobalSynonyms": [],
+      "DefaultResponses": [
+        {
+          "Conditions": [],
+          "SideEffects": [
+            {
+              "EventName": "PlaySound",
+              "ParameterName": "Fireplace.wav",
+              "CaretPosition": 32,
+              "DelayMillis": 0,
+              "IsDirty": false,
+              "DelayedChildEffects": []
+            }
+          ],
+          "Text": "Nothing you try seem to work. You're body is stuck, as in glue. You throat is dry. You see the creature moving just so slightly. Forward toward you."
+        },
+        {
+          "Conditions": [],
+          "SideEffects": [],
+          "Text": "You are not able to do that. Nothing will work. The creature opens its eyes. Looking at you like a cat playing with its pray."
+        },
+        {
+          "Conditions": [],
+          "SideEffects": [],
+          "Text": "You see the creature smiling. A sudden smell of dead meat reaches your nose. Dead human meat."
+        },
+        {
+          "Conditions": [],
+          "SideEffects": [],
+          "Text": "The smile is transformed into a giant jaw. The jaws seems to fill up your entire view. You feel small in comparision to this pending doom."
+        },
+        {
+          "Conditions": [],
+          "SideEffects": [
+            {
+              "EventName": "QueueText",
+              "ParameterName": "... Close you eyes and accept your fate...",
+              "CaretPosition": 0,
+              "DelayMillis": 0,
+              "IsDirty": false,
+              "DelayedChildEffects": [
+                {
+                  "DelayMillis": 500,
+                  "SideEffect": {
+                    "EventName": "QueueText",
+                    "ParameterName": "... Close you eyes and accept your fate...",
+                    "CaretPosition": 0,
+                    "DelayMillis": 0,
+                    "IsDirty": false,
+                    "DelayedChildEffects": [
+                      {
+                        "DelayMillis": 500,
+                        "SideEffect": {
+                          "EventName": "QueueText",
+                          "ParameterName": "... Close you eyes and accept your fate...",
+                          "CaretPosition": 0,
+                          "DelayMillis": 0,
+                          "IsDirty": false,
+                          "DelayedChildEffects": [
+                            {
+                              "DelayMillis": 500,
+                              "SideEffect": {
+                                "EventName": "QueueText",
+                                "ParameterName": "... Close you eyes and accept your fate...",
+                                "CaretPosition": 0,
+                                "DelayMillis": 0,
+                                "IsDirty": false,
+                                "DelayedChildEffects": []
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "EventName": "Prefab",
+              "ParameterName": "FadeToBlack|",
+              "CaretPosition": 0,
+              "DelayMillis": 5000,
+              "IsDirty": false,
+              "DelayedChildEffects": []
+            },
+            {
+              "EventName": "ChangeMusicTrack",
+              "ParameterName": "TheEnd",
+              "CaretPosition": 0,
+              "DelayMillis": 500,
+              "IsDirty": false,
+              "DelayedChildEffects": []
+            }
+          ],
+          "Text": "You shouldn't even try anymore. You should just accept your fate. Close your eyes and accept your fate."
+        }
+      ],
+      "EachTimeSideEffects": [
+        {
+          "EventName": "IncreaseCounter",
+          "ParameterName": "MonsterCounter",
+          "CaretPosition": 0,
+          "DelayMillis": 0,
+          "IsDirty": false,
+          "DelayedChildEffects": []
+        },
+        {
+          "EventName": "Prefab",
+          "ParameterName": "MonsterImage|Monster[MonsterCounter].png",
+          "CaretPosition": 0,
+          "DelayMillis": 0,
+          "IsDirty": false,
+          "DelayedChildEffects": []
+        }
+      ]
     }
   ],
   "Counters": [],
@@ -1925,15 +2067,26 @@
               "IsDirty": false,
               "DelayedChildEffects": []
             }
+          },
+          {
+            "DelayMillis": 4000,
+            "SideEffect": {
+              "EventName": "PlaySound",
+              "ParameterName": "FootStep.wav",
+              "CaretPosition": 0,
+              "DelayMillis": 0,
+              "IsDirty": false,
+              "DelayedChildEffects": []
+            }
           }
         ]
       }
     },
     {
-      "Identifier": "TeethImage",
+      "Identifier": "MonsterImage",
       "SideEffect": {
         "EventName": "RenderImage",
-        "ParameterName": "teeth.png||Teeth|False|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|200|200|1000|False|False|0.3|0.2|0.2|Linear|Linear",
+        "ParameterName": "eyes.png||Monster|True|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|1000|1000|1000|True|False|0.3|0.2|0.2|Linear|Linear",
         "CaretPosition": 0,
         "DelayMillis": 0,
         "IsDirty": false,
@@ -1941,10 +2094,10 @@
       }
     },
     {
-      "Identifier": "EyesImage",
+      "Identifier": "FadeToBlack",
       "SideEffect": {
-        "EventName": "RenderImage",
-        "ParameterName": "eyes.png||Teeth|False|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|200|200|1000|False|False|0.3|0.2|0.2|Linear|Linear",
+        "EventName": "FadeScreen",
+        "ParameterName": "#000000FF|4000|Linear|False|0|1",
         "CaretPosition": 0,
         "DelayMillis": 0,
         "IsDirty": false,
@@ -1999,6 +2152,15 @@
       "Synonyms": [
         "midsummer pole",
         "midsummer"
+      ]
+    },
+    {
+      "MainWord": "upstairs",
+      "Synonyms": [
+        "upstair",
+        "up stairs",
+        "up stair",
+        "stairs"
       ]
     },
     {
