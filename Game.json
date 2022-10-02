@@ -725,7 +725,8 @@
             }
           ]
         }
-      ]
+      ],
+      "GlobalSynonyms": []
     },
     {
       "Name": "Standing",
@@ -886,10 +887,10 @@
           ]
         },
         {
-          "OriginalText": "walk upstairs",
+          "OriginalText": "go upstairs",
           "AcceptableAlternatives": null,
           "MainVerb": {
-            "Name": "walk",
+            "Name": "go",
             "Synonyms": []
           },
           "MainNoun": {
@@ -914,6 +915,41 @@
                   "CaretPosition": 0,
                   "IsDirty": false,
                   "DelayedChildEffects": []
+                },
+                {
+                  "EventName": "Prefab",
+                  "ParameterName": "StairFoot",
+                  "CaretPosition": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                },
+                {
+                  "EventName": "Pause",
+                  "ParameterName": "500",
+                  "CaretPosition": 18,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                },
+                {
+                  "EventName": "Pause",
+                  "ParameterName": "500",
+                  "CaretPosition": 66,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                },
+                {
+                  "EventName": "Pause",
+                  "ParameterName": "500",
+                  "CaretPosition": 74,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                },
+                {
+                  "EventName": "Pause",
+                  "ParameterName": "500",
+                  "CaretPosition": 88,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
                 }
               ],
               "Text": "You open the door. As quietly as possible and then start sneaking. Slowly. Step by step. Upstairs."
@@ -931,6 +967,7 @@
             "Name": "pole",
             "Synonyms": [
               "midsummer pole",
+              "yard",
               "midsummer"
             ]
           },
@@ -1028,15 +1065,17 @@
             }
           ]
         }
-      ]
+      ],
+      "GlobalSynonyms": []
     },
     {
       "Name": "Upstairs",
-      "Description": "TODO: Write intro description for new context: [Upstairs].",
+      "Description": "The door opens by itself. You stand in chock. Unable to move any part of your body.",
       "Sentences": [],
       "EffectData": null,
       "ContextEnterSideEffects": [],
-      "ConditionTriggerEffects": []
+      "ConditionTriggerEffects": [],
+      "GlobalSynonyms": []
     }
   ],
   "Counters": [],
@@ -1184,6 +1223,105 @@
           }
         ]
       }
+    },
+    {
+      "Identifier": "StairFoot",
+      "SideEffect": {
+        "EventName": "RenderImage",
+        "ParameterName": "Stair1.png||Top|True|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|1000|1000|1000|False|False|0.3|0.2|0.2|Linear|Linear",
+        "CaretPosition": 0,
+        "IsDirty": false,
+        "DelayedChildEffects": [
+          {
+            "DelayMillis": 2000,
+            "SideEffect": {
+              "EventName": "RenderImage",
+              "ParameterName": "Stair2.png|||False|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|1000|1000|1000|False|False|0.3|0.2|0.2|Linear|Linear",
+              "CaretPosition": 0,
+              "IsDirty": false,
+              "DelayedChildEffects": [
+                {
+                  "DelayMillis": 2000,
+                  "SideEffect": {
+                    "EventName": "RenderImage",
+                    "ParameterName": "Stair3.png|||False|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|1000|1000|1000|False|False|0.3|0.2|0.2|Linear|Linear",
+                    "CaretPosition": 0,
+                    "IsDirty": false,
+                    "DelayedChildEffects": [
+                      {
+                        "DelayMillis": 2000,
+                        "SideEffect": {
+                          "EventName": "RenderImage",
+                          "ParameterName": "Door1.png|||False|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|200|1500|200|False|False|0.3|0.2|0.2|Linear|Linear",
+                          "CaretPosition": 0,
+                          "IsDirty": false,
+                          "DelayedChildEffects": [
+                            {
+                              "DelayMillis": 2000,
+                              "SideEffect": {
+                                "EventName": "RenderImage",
+                                "ParameterName": "Door2.png|||False|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|200|1500|200|False|False|0.3|0.2|0.2|Linear|Linear",
+                                "CaretPosition": 0,
+                                "IsDirty": false,
+                                "DelayedChildEffects": [
+                                  {
+                                    "DelayMillis": 2000,
+                                    "SideEffect": {
+                                      "EventName": "RenderImage",
+                                      "ParameterName": "Door3.png||Top|False|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|200|1500|200|True|False|0.3|0.2|0.2|Linear|Linear",
+                                      "CaretPosition": 0,
+                                      "IsDirty": false,
+                                      "DelayedChildEffects": []
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "DelayMillis": 0,
+                              "SideEffect": {
+                                "EventName": "PlaySound",
+                                "ParameterName": "Creak.wav",
+                                "CaretPosition": 0,
+                                "IsDirty": false,
+                                "DelayedChildEffects": []
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "DelayMillis": 2000,
+            "SideEffect": {
+              "EventName": "PlaySound",
+              "ParameterName": "FootStep.wav",
+              "CaretPosition": 0,
+              "IsDirty": false,
+              "DelayedChildEffects": []
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "GlobalSynonyms": [
+    {
+      "MainWord": "take",
+      "Synonyms": [
+        "pick up"
+      ]
+    },
+    {
+      "MainWord": "go",
+      "Synonyms": [
+        "walk"
+      ]
     }
   ]
 }
