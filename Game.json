@@ -833,7 +833,9 @@
           "AcceptableAlternatives": null,
           "MainVerb": {
             "Name": "look",
-            "Synonyms": []
+            "Synonyms": [
+              "go"
+            ]
           },
           "MainNoun": {
             "Name": "brothers",
@@ -1117,6 +1119,189 @@
               "Conditions": [],
               "SideEffects": [],
               "Text": "You open the door upstairs."
+            }
+          ]
+        },
+        {
+          "OriginalText": "close window",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "close",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "window",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "Closing the window would be a bad idea. It's hot as hell in here."
+            }
+          ]
+        },
+        {
+          "OriginalText": "open window",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "open",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "window",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "The window is already slightly open. Opening it more would only create noise. You don't want to disturb your brothers precious sleep."
+            }
+          ]
+        },
+        {
+          "OriginalText": "hit brothers",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "hit",
+            "Synonyms": [
+              "kick",
+              "hurt",
+              "punch"
+            ]
+          },
+          "MainNoun": {
+            "Name": "brothers",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You don't want to inflict any violence upon them! You don't even want to wake them. If there is something here, you fear their presence would only scare the <b>something</b> away."
+            }
+          ]
+        },
+        {
+          "OriginalText": "wake brothers",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "wake",
+            "Synonyms": [
+              "awake",
+              "talk",
+              "say"
+            ]
+          },
+          "MainNoun": {
+            "Name": "brothers",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You don't want to wake them. Them being awake may scare away whatever is making that sound."
+            }
+          ]
+        },
+        {
+          "OriginalText": "yell",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "yell",
+            "Synonyms": [
+              "scream",
+              "shout"
+            ]
+          },
+          "MainNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "No. That would wake up your brothers AND scare away whatever is making that sound upstairs."
+            }
+          ]
+        },
+        {
+          "OriginalText": "look at sleeping bag",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "look",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "bag",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "It's your old sweaty sleeping bag. Its warm as heck. "
+            }
+          ]
+        },
+        {
+          "OriginalText": "go bag",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "go",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "bag",
+            "Synonyms": [
+              "back"
+            ]
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [
+                {
+                  "EventName": "Prefab",
+                  "ParameterName": "ShowStayImage|StandingUp.png",
+                  "CaretPosition": 0,
+                  "DelayMillis": 0,
+                  "IsDirty": false,
+                  "DelayedChildEffects": []
+                }
+              ],
+              "Text": "You stand next to your sleeping bag."
             }
           ]
         }
@@ -1576,6 +1761,16 @@
       "Synonyms": [
         "midsummer pole",
         "midsummer"
+      ]
+    },
+    {
+      "MainWord": "talk",
+      "Synonyms": [
+        "speak",
+        "say",
+        "mumble",
+        "tell",
+        "inform"
       ]
     }
   ]

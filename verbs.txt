@@ -24,3 +24,4 @@ hit
 wake
 fuck
 screw
+close
