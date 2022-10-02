@@ -177,6 +177,7 @@
             "Synonyms": [
               "unzip",
               "exit",
+              "escape",
               "remove",
               "leave",
               "flee"
@@ -185,7 +186,8 @@
           "MainNoun": {
             "Name": "bag",
             "Synonyms": [
-              "sleeping bag"
+              "sleeping bag",
+              "sack"
             ]
           },
           "SecondaryNoun": {
@@ -200,6 +202,7 @@
                   "EventName": "Prefab",
                   "ParameterName": "UnzipSound|",
                   "CaretPosition": 100,
+                  "DelayMillis": 0,
                   "IsDirty": false,
                   "DelayedChildEffects": []
                 },
@@ -207,6 +210,7 @@
                   "EventName": "SetCounter",
                   "ParameterName": "OutOfSleepingBag|1",
                   "CaretPosition": 0,
+                  "DelayMillis": 0,
                   "IsDirty": false,
                   "DelayedChildEffects": []
                 }
@@ -225,7 +229,9 @@
           "AcceptableAlternatives": [
             "get up",
             "stand",
-            "rise"
+            "rise",
+            "upraise",
+            "erect"
           ],
           "MainVerb": {
             "Name": "stand",
@@ -258,6 +264,7 @@
                   "EventName": "SetContext",
                   "ParameterName": "Standing",
                   "CaretPosition": 0,
+                  "DelayMillis": 0,
                   "IsDirty": false,
                   "DelayedChildEffects": []
                 }
@@ -592,6 +599,7 @@
                   "EventName": "CloseGame",
                   "ParameterName": "",
                   "CaretPosition": 40,
+                  "DelayMillis": 0,
                   "IsDirty": false,
                   "DelayedChildEffects": []
                 }
@@ -643,6 +651,7 @@
             "EventName": "Prefab",
             "ParameterName": "Drums|",
             "CaretPosition": 0,
+            "DelayMillis": 0,
             "IsDirty": false,
             "DelayedChildEffects": []
           }
@@ -653,6 +662,7 @@
             "EventName": "Prefab",
             "ParameterName": "LoudBounce|",
             "CaretPosition": 0,
+            "DelayMillis": 0,
             "IsDirty": false,
             "DelayedChildEffects": []
           }
@@ -663,6 +673,7 @@
             "EventName": "Prefab",
             "ParameterName": "BounceShake|",
             "CaretPosition": 0,
+            "DelayMillis": 0,
             "IsDirty": false,
             "DelayedChildEffects": []
           }
@@ -673,6 +684,7 @@
             "EventName": "LoopCounter",
             "ParameterName": "ClockTime|1|1000|2147483647",
             "CaretPosition": 0,
+            "DelayMillis": 0,
             "IsDirty": false,
             "DelayedChildEffects": []
           }
@@ -690,6 +702,7 @@
               "EventName": "Prefab",
               "ParameterName": "RenderClock|Clock[ClockTime].png",
               "CaretPosition": 0,
+              "DelayMillis": 0,
               "IsDirty": false,
               "DelayedChildEffects": []
             }
@@ -706,6 +719,7 @@
               "EventName": "SetCounter",
               "ParameterName": "ClockTime|1",
               "CaretPosition": 0,
+              "DelayMillis": 0,
               "IsDirty": false,
               "DelayedChildEffects": []
             },
@@ -713,6 +727,7 @@
               "EventName": "Prefab",
               "ParameterName": "LoudBounce|",
               "CaretPosition": 0,
+              "DelayMillis": 0,
               "IsDirty": false,
               "DelayedChildEffects": []
             },
@@ -720,6 +735,7 @@
               "EventName": "Prefab",
               "ParameterName": "BounceShake|",
               "CaretPosition": 0,
+              "DelayMillis": 0,
               "IsDirty": false,
               "DelayedChildEffects": []
             }
@@ -803,6 +819,7 @@
                   "EventName": "Prefab",
                   "ParameterName": "ShowStayImage|StarrySky.png",
                   "CaretPosition": 0,
+                  "DelayMillis": 0,
                   "IsDirty": false,
                   "DelayedChildEffects": []
                 }
@@ -812,19 +829,15 @@
           ]
         },
         {
-          "OriginalText": "look at people",
+          "OriginalText": "look at brothers",
           "AcceptableAlternatives": null,
           "MainVerb": {
             "Name": "look",
             "Synonyms": []
           },
           "MainNoun": {
-            "Name": "people",
-            "Synonyms": [
-              "brothers",
-              "bodies",
-              "sleeping bags"
-            ]
+            "Name": "brothers",
+            "Synonyms": []
           },
           "SecondaryNoun": {
             "Name": null,
@@ -838,6 +851,7 @@
                   "EventName": "Prefab",
                   "ParameterName": "ShowStayImage|brothers.png",
                   "CaretPosition": 0,
+                  "DelayMillis": 0,
                   "IsDirty": false,
                   "DelayedChildEffects": []
                 },
@@ -845,6 +859,7 @@
                   "EventName": "Prefab",
                   "ParameterName": "SnoreSound|",
                   "CaretPosition": 30,
+                  "DelayMillis": 0,
                   "IsDirty": false,
                   "DelayedChildEffects": []
                 },
@@ -852,6 +867,7 @@
                   "EventName": "Prefab",
                   "ParameterName": "SleepZZZ|",
                   "CaretPosition": 30,
+                  "DelayMillis": 0,
                   "IsDirty": false,
                   "DelayedChildEffects": []
                 }
@@ -913,6 +929,7 @@
                   "EventName": "SetContext",
                   "ParameterName": "Upstairs",
                   "CaretPosition": 0,
+                  "DelayMillis": 0,
                   "IsDirty": false,
                   "DelayedChildEffects": []
                 },
@@ -920,6 +937,7 @@
                   "EventName": "Prefab",
                   "ParameterName": "StairFoot",
                   "CaretPosition": 0,
+                  "DelayMillis": 0,
                   "IsDirty": false,
                   "DelayedChildEffects": []
                 },
@@ -927,6 +945,7 @@
                   "EventName": "Pause",
                   "ParameterName": "500",
                   "CaretPosition": 18,
+                  "DelayMillis": 0,
                   "IsDirty": false,
                   "DelayedChildEffects": []
                 },
@@ -934,6 +953,7 @@
                   "EventName": "Pause",
                   "ParameterName": "500",
                   "CaretPosition": 66,
+                  "DelayMillis": 0,
                   "IsDirty": false,
                   "DelayedChildEffects": []
                 },
@@ -941,6 +961,7 @@
                   "EventName": "Pause",
                   "ParameterName": "500",
                   "CaretPosition": 74,
+                  "DelayMillis": 0,
                   "IsDirty": false,
                   "DelayedChildEffects": []
                 },
@@ -948,6 +969,7 @@
                   "EventName": "Pause",
                   "ParameterName": "500",
                   "CaretPosition": 88,
+                  "DelayMillis": 0,
                   "IsDirty": false,
                   "DelayedChildEffects": []
                 }
@@ -982,6 +1004,121 @@
               "Text": "It was quite a bit of time ago since it was midsummer. The pole outside is old and hangs to one side. You bet the owners left it there to give the house and its surrounding a more haunted feeling."
             }
           ]
+        },
+        {
+          "OriginalText": "look around",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "look",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "around",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "Your brothers are laying on the floor next to a slightly open window. The pale moon light shines in on their still faces. The loud bouncing sound continues."
+            }
+          ]
+        },
+        {
+          "OriginalText": "escape through window",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "escape",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "window",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "The window is to small to fit you. Also. Do you really want to escape?"
+            }
+          ]
+        },
+        {
+          "OriginalText": "escape",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "escape",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "Strange. There does not seem to be any door leading to the outside. There is only the door leading upstairs. Toward that mesmerizing repeating sound."
+            }
+          ]
+        },
+        {
+          "OriginalText": "look at door",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "look",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "door",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "This is very strange. You remember coming here through an outside door. But now, there is only a door leading upstairs."
+            }
+          ]
+        },
+        {
+          "OriginalText": "open door",
+          "AcceptableAlternatives": null,
+          "MainVerb": {
+            "Name": "open",
+            "Synonyms": []
+          },
+          "MainNoun": {
+            "Name": "door",
+            "Synonyms": []
+          },
+          "SecondaryNoun": {
+            "Name": null,
+            "Synonyms": []
+          },
+          "Responses": [
+            {
+              "Conditions": [],
+              "SideEffects": [],
+              "Text": "You open the door upstairs."
+            }
+          ]
         }
       ],
       "EffectData": {
@@ -1003,6 +1140,7 @@
             "EventName": "Prefab",
             "ParameterName": "MoreDrums|",
             "CaretPosition": 0,
+            "DelayMillis": 0,
             "IsDirty": false,
             "DelayedChildEffects": []
           }
@@ -1013,6 +1151,7 @@
             "EventName": "Prefab",
             "ParameterName": "ShowStayImage|StandingUp.png",
             "CaretPosition": 0,
+            "DelayMillis": 2000,
             "IsDirty": false,
             "DelayedChildEffects": []
           }
@@ -1030,6 +1169,7 @@
               "EventName": "Prefab",
               "ParameterName": "RenderClockSmall|Clock[ClockTime].png",
               "CaretPosition": 0,
+              "DelayMillis": 0,
               "IsDirty": false,
               "DelayedChildEffects": []
             }
@@ -1046,6 +1186,7 @@
               "EventName": "SetCounter",
               "ParameterName": "ClockTime|1",
               "CaretPosition": 0,
+              "DelayMillis": 0,
               "IsDirty": false,
               "DelayedChildEffects": []
             },
@@ -1053,6 +1194,7 @@
               "EventName": "Prefab",
               "ParameterName": "LoudBounce|",
               "CaretPosition": 0,
+              "DelayMillis": 0,
               "IsDirty": false,
               "DelayedChildEffects": []
             },
@@ -1060,6 +1202,7 @@
               "EventName": "Prefab",
               "ParameterName": "BounceShakeStronger|",
               "CaretPosition": 0,
+              "DelayMillis": 0,
               "IsDirty": false,
               "DelayedChildEffects": []
             }
@@ -1070,10 +1213,33 @@
     },
     {
       "Name": "Upstairs",
-      "Description": "The door opens by itself. You stand in chock. Unable to move any part of your body.",
+      "Description": "The door opens by itself. You stand in shock. Unable to move any part of your body. You see something resembling a figure slowly moving toward you.",
       "Sentences": [],
-      "EffectData": null,
-      "ContextEnterSideEffects": [],
+      "EffectData": {
+        "DurationMillis": 0,
+        "Curve": "Linear",
+        "BackgroundImage": null,
+        "BackgroundColor": "",
+        "TextColor": null,
+        "ScreenSize": null,
+        "GrainIntensity": null,
+        "LensDistortionIntensity": null,
+        "LensDistortionXMulitiplier": null,
+        "LensDistortionScale": null
+      },
+      "ContextEnterSideEffects": [
+        {
+          "OnlyFirstTime": false,
+          "SideEffect": {
+            "EventName": "Prefab",
+            "ParameterName": "UpstairMusic|",
+            "CaretPosition": 0,
+            "DelayMillis": 0,
+            "IsDirty": false,
+            "DelayedChildEffects": []
+          }
+        }
+      ],
       "ConditionTriggerEffects": [],
       "GlobalSynonyms": []
     }
@@ -1088,6 +1254,18 @@
         "EventName": "ChangeMusicTrack",
         "ParameterName": "QuietDrums",
         "CaretPosition": 0,
+        "DelayMillis": 0,
+        "IsDirty": false,
+        "DelayedChildEffects": []
+      }
+    },
+    {
+      "Identifier": "UpstairMusic",
+      "SideEffect": {
+        "EventName": "ChangeMusicTrack",
+        "ParameterName": "RaisedTension",
+        "CaretPosition": 0,
+        "DelayMillis": 0,
         "IsDirty": false,
         "DelayedChildEffects": []
       }
@@ -1098,6 +1276,7 @@
         "EventName": "ChangeMusicTrack",
         "ParameterName": "MoreDrums",
         "CaretPosition": 0,
+        "DelayMillis": 0,
         "IsDirty": false,
         "DelayedChildEffects": []
       }
@@ -1108,6 +1287,7 @@
         "EventName": "RenderImage",
         "ParameterName": "Clock1.png|||False|0,100|0,100|0,100|Linear|Linear|Linear|Linear|Linear|Linear|250|250|750|False|False|0.25|0|0|Linear|Linear",
         "CaretPosition": 0,
+        "DelayMillis": 0,
         "IsDirty": false,
         "DelayedChildEffects": []
       }
@@ -1118,6 +1298,7 @@
         "EventName": "PlaySound",
         "ParameterName": "LoudBounce.wav",
         "CaretPosition": 0,
+        "DelayMillis": 0,
         "IsDirty": false,
         "DelayedChildEffects": []
       }
@@ -1128,6 +1309,7 @@
         "EventName": "PlaySound",
         "ParameterName": "Unzip.wav",
         "CaretPosition": 0,
+        "DelayMillis": 0,
         "IsDirty": false,
         "DelayedChildEffects": []
       }
@@ -1138,6 +1320,7 @@
         "EventName": "RenderImage",
         "ParameterName": "Clock1.png|||False|320,160|320,160|320,160|Linear|Linear|Linear|Linear|Linear|Linear|200|200|700|False|False|0.15|0|0|Linear|Linear",
         "CaretPosition": 0,
+        "DelayMillis": 0,
         "IsDirty": false,
         "DelayedChildEffects": []
       }
@@ -1148,6 +1331,7 @@
         "EventName": "PlaySound",
         "ParameterName": "Hello.wav",
         "CaretPosition": 0,
+        "DelayMillis": 0,
         "IsDirty": false,
         "DelayedChildEffects": []
       }
@@ -1158,6 +1342,7 @@
         "EventName": "ShakeScreen",
         "ParameterName": "500|10|EaseInOutSine",
         "CaretPosition": 0,
+        "DelayMillis": 0,
         "IsDirty": false,
         "DelayedChildEffects": []
       }
@@ -1168,6 +1353,7 @@
         "EventName": "ShakeScreen",
         "ParameterName": "650|15|Linear",
         "CaretPosition": 0,
+        "DelayMillis": 0,
         "IsDirty": false,
         "DelayedChildEffects": []
       }
@@ -1178,6 +1364,7 @@
         "EventName": "RenderImage",
         "ParameterName": "StandingUp.png||Top|True|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|500|500|1000|True|False|0.35|0.2|0.2|Linear|Linear",
         "CaretPosition": 0,
+        "DelayMillis": 0,
         "IsDirty": false,
         "DelayedChildEffects": []
       }
@@ -1188,6 +1375,7 @@
         "EventName": "PlaySound",
         "ParameterName": "snore.wav",
         "CaretPosition": 0,
+        "DelayMillis": 0,
         "IsDirty": false,
         "DelayedChildEffects": []
       }
@@ -1198,6 +1386,7 @@
         "EventName": "RenderImage",
         "ParameterName": "z1.png|||False|-130,230|-130,130|-130,500|Linear|Linear|Linear|Linear|Linear|Linear|800|800|500|False|False|0.5|0.4|0.4|Linear|Linear",
         "CaretPosition": 0,
+        "DelayMillis": 0,
         "IsDirty": false,
         "DelayedChildEffects": [
           {
@@ -1206,6 +1395,7 @@
               "EventName": "RenderImage",
               "ParameterName": "z2.png|||False|0,230|0,130|0,500|Linear|Linear|Linear|Linear|Linear|Linear|800|800|500|False|False|0.5|0.4|0.4|Linear|Linear",
               "CaretPosition": 0,
+              "DelayMillis": 0,
               "IsDirty": false,
               "DelayedChildEffects": [
                 {
@@ -1214,6 +1404,7 @@
                     "EventName": "RenderImage",
                     "ParameterName": "z3.png|||False|130,230|130,130|130,500|Linear|Linear|Linear|Linear|Linear|Linear|800|800|500|False|False|0.5|0.4|0.4|Linear|Linear",
                     "CaretPosition": 0,
+                    "DelayMillis": 0,
                     "IsDirty": false,
                     "DelayedChildEffects": []
                   }
@@ -1230,6 +1421,7 @@
         "EventName": "RenderImage",
         "ParameterName": "Stair1.png||Top|True|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|1000|1000|1000|False|False|0.3|0.2|0.2|Linear|Linear",
         "CaretPosition": 0,
+        "DelayMillis": 0,
         "IsDirty": false,
         "DelayedChildEffects": [
           {
@@ -1238,6 +1430,7 @@
               "EventName": "RenderImage",
               "ParameterName": "Stair2.png|||False|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|1000|1000|1000|False|False|0.3|0.2|0.2|Linear|Linear",
               "CaretPosition": 0,
+              "DelayMillis": 0,
               "IsDirty": false,
               "DelayedChildEffects": [
                 {
@@ -1246,6 +1439,7 @@
                     "EventName": "RenderImage",
                     "ParameterName": "Stair3.png|||False|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|1000|1000|1000|False|False|0.3|0.2|0.2|Linear|Linear",
                     "CaretPosition": 0,
+                    "DelayMillis": 0,
                     "IsDirty": false,
                     "DelayedChildEffects": [
                       {
@@ -1254,6 +1448,7 @@
                           "EventName": "RenderImage",
                           "ParameterName": "Door1.png|||False|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|200|1500|200|False|False|0.3|0.2|0.2|Linear|Linear",
                           "CaretPosition": 0,
+                          "DelayMillis": 0,
                           "IsDirty": false,
                           "DelayedChildEffects": [
                             {
@@ -1262,6 +1457,7 @@
                                 "EventName": "RenderImage",
                                 "ParameterName": "Door2.png|||False|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|200|1500|200|False|False|0.3|0.2|0.2|Linear|Linear",
                                 "CaretPosition": 0,
+                                "DelayMillis": 0,
                                 "IsDirty": false,
                                 "DelayedChildEffects": [
                                   {
@@ -1270,6 +1466,7 @@
                                       "EventName": "RenderImage",
                                       "ParameterName": "Door3.png||Top|False|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|200|1500|200|True|False|0.3|0.2|0.2|Linear|Linear",
                                       "CaretPosition": 0,
+                                      "DelayMillis": 0,
                                       "IsDirty": false,
                                       "DelayedChildEffects": []
                                     }
@@ -1283,6 +1480,7 @@
                                 "EventName": "PlaySound",
                                 "ParameterName": "Creak.wav",
                                 "CaretPosition": 0,
+                                "DelayMillis": 0,
                                 "IsDirty": false,
                                 "DelayedChildEffects": []
                               }
@@ -1302,11 +1500,34 @@
               "EventName": "PlaySound",
               "ParameterName": "FootStep.wav",
               "CaretPosition": 0,
+              "DelayMillis": 0,
               "IsDirty": false,
               "DelayedChildEffects": []
             }
           }
         ]
+      }
+    },
+    {
+      "Identifier": "TeethImage",
+      "SideEffect": {
+        "EventName": "RenderImage",
+        "ParameterName": "teeth.png||Teeth|False|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|200|200|1000|False|False|0.3|0.2|0.2|Linear|Linear",
+        "CaretPosition": 0,
+        "DelayMillis": 0,
+        "IsDirty": false,
+        "DelayedChildEffects": []
+      }
+    },
+    {
+      "Identifier": "EyesImage",
+      "SideEffect": {
+        "EventName": "RenderImage",
+        "ParameterName": "eyes.png||Teeth|False|0,110|0,110|0,110|Linear|Linear|Linear|Linear|Linear|Linear|200|200|1000|False|False|0.3|0.2|0.2|Linear|Linear",
+        "CaretPosition": 0,
+        "DelayMillis": 0,
+        "IsDirty": false,
+        "DelayedChildEffects": []
       }
     }
   ],
@@ -1314,13 +1535,47 @@
     {
       "MainWord": "take",
       "Synonyms": [
-        "pick up"
+        "pick up",
+        "steal",
+        "grab"
       ]
     },
     {
       "MainWord": "go",
       "Synonyms": [
-        "walk"
+        "walk",
+        "travel",
+        "sneak"
+      ]
+    },
+    {
+      "MainWord": "look",
+      "Synonyms": [
+        "examine",
+        "investigate"
+      ]
+    },
+    {
+      "MainWord": "brothers",
+      "Synonyms": [
+        "people",
+        "bodies",
+        "figures",
+        "sleeping bags"
+      ]
+    },
+    {
+      "MainWord": "stars",
+      "Synonyms": [
+        "sky",
+        "starlit sky"
+      ]
+    },
+    {
+      "MainWord": "pole",
+      "Synonyms": [
+        "midsummer pole",
+        "midsummer"
       ]
     }
   ]
