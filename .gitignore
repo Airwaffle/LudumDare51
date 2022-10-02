@@ -1,0 +1,39 @@
+#ignore thumbnails created by windows
+Thumbs.db
+#Ignore files build by Visual Studio
+
+*.obj
+*.exe
+*.dll
+*.dll.meta
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.pyc
+[Bb]in/
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
+TextMesh Pro/
+Library/
+Logs/
+ProjectSettings/
+Temp/
+TextEngine/Unity/Assets/netstandard2.0/
+TextEngine/Unity/UserSettings/EditorUserSettings.asset
+TextEngine/Unity/UserSettings/Layouts/CurrentMaximizeLayout.dwlt
+TextEngine/Unity/UserSettings/Layouts/default-2021.dwlt
+TextEngine/Unity/Assets/Resources/
